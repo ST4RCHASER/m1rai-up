@@ -1,13 +1,17 @@
 {
   "compilerOptions": {
-    "strict": true,
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "preserve",
+    "resolveJsonModule": true,
     "jsxImportSource": "solid-js",
-    "types": ["vite/client", "@testing-library/jest-dom"]
+    "types": [
+      "vite/client"
+    ],
+    "noEmit": true,
+    "isolatedModules": true
   }
 }
