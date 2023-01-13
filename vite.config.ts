@@ -1,27 +1,26 @@
-/// <reference types="vitest" />
-/// <reference types="vite/client" />
-
 import { defineConfig } from 'vite';
+import WindiCSS from 'vite-plugin-windicss';
 import solidPlugin from 'vite-plugin-solid';
+import { createHtmlPlugin } from 'vite-plugin-html';
 
 export default defineConfig({
-  plugins: [solidPlugin()],
+  plugins: [
+    solidPlugin(),
+    WindiCSS({
+      scan: {
+        fileExtensions: ['html', 'js', 'ts', 'jsx', 'tsx'],
+      },
+    }),
+    createHtmlPlugin({
+      minify: true,
+    }),
+  ],
   server: {
     port: 3000,
   },
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    transformMode: { web: [/\.[jt]sx?$/] },
-    setupFiles: ['node_modules/@testing-library/jest-dom/extend-expect.js'],
-    // otherwise, solid would be loaded twice:
-    deps: { registerNodeLoader: true },
-    // if you have few tests, try commenting one
-    // or both out to improve performance:
-    threads: false,
-    isolate: false,
-  },
   build: {
+    minify: true,
+    sourcemap: false,
     target: 'esnext',
   },
   resolve: {
