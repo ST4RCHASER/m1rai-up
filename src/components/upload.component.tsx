@@ -59,7 +59,9 @@ export const Upload = () => {
           </div>
           <div class="text-lg p-4">
             <p>Welcome to m1rai up</p>
-            <p>Drag 'and drop or click empty area to upload</p>
+            <p class="mb-2">Drag 'and drop or click anywhere to upload</p>
+            <p>Upload using cURL:</p>
+            <p class="text-base mb-2 italic">curl --upload-file ./hello.txt https://up.m1r.ai/upload</p>
             <p>Up to 100MB is allowed</p>
           </div>
           <div class="px-4 py-2">
