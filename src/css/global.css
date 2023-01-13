@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Lucida Console, Lucida Sans Unicode, Fira Mono, Consolas,
+    Courier New, Courier, monospace, Times New Roman;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.big-arrow {
+  margin-left: -50%;
+  z-index: 2;
+}
+
+body {
+  background-color: black;
+  /* overflow: hidden; */
+}
+
+.copy {
+  border-color: #00cb00;
+  color: #00cb00;
+  background-color: rgba(4,12,3,0.8);
+}
+.copy.coped {
+  border-color: #19ff39;
+  color: #19ff39;
+  background-color: rgba(14,40,10,0.8);
+}

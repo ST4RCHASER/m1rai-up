@@ -1,0 +1,31 @@
+@keyframes arrow0 {
+  from {
+    transform: translateY(200%);
+    opacity: 45%;
+  }
+  to {
+    transform: translateY(-500%);
+    opacity: -10%;
+  }
+}
+
+@keyframes dot0 {
+  from {
+    margin-top: 0%;
+    opacity: 80%;
+  }
+  to {
+    margin-top: -5%;
+    opacity: -20%;
+  }
+}
+.arrows > * > * {
+  animation: arrow0 5s infinite;
+  transition-timing-function: linear;
+  z-index: 5;
+}
+.dots > * > * {
+  animation: dot0 5s infinite;
+  transition-timing-function: linear;
+  z-index: 1;
+}
