@@ -40,9 +40,8 @@ export const Upload = () => {
       <main>
         <div
           ref={dropzoneRef}
-          class={`${
-            isDraging() ? 'z-40 opacity-100' : 'z-30 opacity-0'
-          } duration-200 w-screen h-screen fixed flex items-center justify-center bg-black bg-opacity-80`}
+          class={`${isDraging() ? 'z-40 opacity-100' : 'z-30 opacity-0'
+            } duration-200 w-screen h-screen fixed flex items-center justify-center bg-black bg-opacity-80`}
         >
           <h1 class="text-6xl text-white font-bold">Drag here to upload</h1>
           <input
@@ -59,10 +58,14 @@ export const Upload = () => {
           </div>
           <div class="text-lg p-4">
             <p>Welcome to m1rai up</p>
-            <p class="mb-2">Drag 'and drop or click anywhere to upload</p>
-            <p>Upload using cURL:</p>
-            <p class="text-base mb-2 italic">curl --upload-file ./hello.txt https://up.m1r.ai/upload</p>
-            <p>Up to 100MB is allowed</p>
+            <p class="mb-2"><span class="hidden md:inline">Drag 'and drop or click</span><span class="inline md:hidden">Touch</span> anywhere to upload</p>
+            <div class='hidden md:block'>
+              <p>Upload using cURL:</p>
+              <p class="text-base mb-16 sm:mb-14 md:mb-8 italic"><span class="absolute z-40 select-all">curl --upload-file ./hello.txt https://up.m1r.ai/upload</span></p>
+              <p>ShareX: <a href="https://up.m1r.ai/m1r.ai.sxcu" download target='_blank' class="underline absolute z-40 ml-2">Click here</a></p>
+            </div>
+            <p class="mb-2 z-40 absolute"></p>
+            <p>Up to 100MiB allowed</p>
           </div>
           <div class="px-4 py-2">
             {(value as miraiValue)?.history &&
