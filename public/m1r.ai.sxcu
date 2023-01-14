@@ -1,4 +1,5 @@
 ﻿{
+  "Version": "14.1.0",
   "Name": "m1r.ai",
   "DestinationType": "ImageUploader, TextUploader, FileUploader",
   "RequestMethod": "POST",
