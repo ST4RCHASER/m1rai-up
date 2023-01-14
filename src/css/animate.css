@@ -19,6 +19,16 @@
     opacity: -20%;
   }
 }
+
+@keyframes fadeout {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
 .arrows > * > * {
   animation: arrow0 5s infinite;
   transition-timing-function: linear;
@@ -28,4 +38,8 @@
   animation: dot0 5s infinite;
   transition-timing-function: linear;
   z-index: 1;
+}
+.upload-text {
+  animation: fadeout 5s;
+  transition-timing-function: linear;
 }

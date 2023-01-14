@@ -2,12 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: politik;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Politik'),
+    url(/fonts/Politik.woff) format('woff');
+}
+@font-face {
+  font-family: politik;
+  font-style: italic;
+  font-weight: 400;
+  src: local('Politik'),
+    url('/fonts/Politik Italic.woff') format('woff');
+}
+@font-face {
+  font-family: politik;
+  font-style: normal;
+  font-weight: 700;
+  src: local('Politik'),
+    url('/fonts/Politik Bold.woff') format('woff');
+}
+@font-face {
+  font-family: politik;
+  font-style: italic;
+  font-weight: 700;
+  src: local('Politik'),
+    url('/fonts/Politik Bold Italic.woff')
+      format('woff');
+}
+
 * {
   font-family: Lucida Console, Lucida Sans Unicode, Fira Mono, Consolas,
     Courier New, Courier, monospace, Times New Roman;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+}
+.upload-text {
+  font-family: 'Politik', Lucida Console, Lucida Sans Unicode, Fira Mono,
+    Consolas, Courier New, Courier, monospace, Times New Roman;
 }
 
 .big-arrow {
@@ -23,10 +57,10 @@ body {
 .copy {
   border-color: #00cb00;
   color: #00cb00;
-  background-color: rgba(4,12,3,0.8);
+  background-color: rgba(4, 12, 3, 0.8);
 }
 .copy.coped {
   border-color: #19ff39;
   color: #19ff39;
-  background-color: rgba(14,40,10,0.8);
+  background-color: rgba(14, 40, 10, 0.8);
 }
