@@ -62,7 +62,7 @@ export const Upload = () => {
             <div class='hidden md:block'>
               <p>Upload using cURL:</p>
               <p class="text-base mb-16 sm:mb-14 md:mb-8 italic"><span class="absolute z-40 select-all">curl --upload-file ./hello.txt https://up.m1r.ai/upload</span></p>
-              <p>ShareX: <a href="https://ot.m1r.ai/9/0l9wm.sxcu" target='_blank' class="underline absolute z-40 ml-2">Click here</a></p>
+              <p>ShareX: <a href="https://m1r.ai/9/406os.sxcu" target='_blank' class="underline absolute z-40 ml-2">Click here</a></p>
             </div>
             <p class="mb-2 z-40 absolute"></p>
             <p>Up to 100MiB allowed</p>
