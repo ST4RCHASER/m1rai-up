@@ -18,7 +18,6 @@ export const Upload = () => {
   };
 
   const onUploadFile = (files: File[]) => {
-    console.log('files', files);
     setProcessCard(processCard().concat(files as any));
   };
 
@@ -40,10 +39,13 @@ export const Upload = () => {
       <main>
         <div
           ref={dropzoneRef}
-          class={`${isDraging() ? 'z-50 opacity-100' : 'z-30 opacity-0'
-            } duration-200 w-screen h-screen fixed flex items-center justify-center bg-black bg-opacity-80`}
+          class={`${
+            isDraging() ? 'z-50 opacity-100' : 'z-30 opacity-0'
+          } duration-200 w-screen h-screen fixed flex items-center justify-center bg-black bg-opacity-80`}
         >
-          <h1 class="text-3xl md:text-6xl text-white font-bold">Drag here to upload</h1>
+          <h1 class="text-3xl md:text-6xl text-white font-bold">
+            Drag here to upload
+          </h1>
           <input
             type="file"
             title="Click to pick and upload"
@@ -58,11 +60,27 @@ export const Upload = () => {
           </div>
           <div class="text-lg p-4">
             <p>Welcome to m1rai up</p>
-            <p class="mb-2"><span class="hidden md:inline">Drag 'and drop or click</span><span class="inline md:hidden">Touch</span> anywhere to upload</p>
-            <div class='hidden md:block'>
+            <p class="mb-2">
+              <span class="hidden md:inline">Drag 'and drop or click</span>
+              <span class="inline md:hidden">Touch</span> anywhere to upload
+            </p>
+            <div class="hidden md:block">
               <p>Upload using cURL:</p>
-              <p class="text-base mb-16 sm:mb-14 md:mb-8 italic"><span class="absolute z-40 select-all">curl --upload-file ./hello.txt https://up.m1r.ai/upload</span></p>
-              <p>ShareX: <a href="https://m1r.ai/9/406os.sxcu" target='_blank' class="underline absolute z-40 ml-2">Click here</a></p>
+              <p class="text-base mb-16 sm:mb-14 md:mb-8 italic">
+                <span class="absolute z-40 select-all">
+                  curl --upload-file ./hello.txt https://up.m1r.ai/upload
+                </span>
+              </p>
+              <p>
+                ShareX:{' '}
+                <a
+                  href="https://m1r.ai/9/406os.sxcu"
+                  target="_blank"
+                  class="underline absolute z-40 ml-2"
+                >
+                  Click here
+                </a>
+              </p>
             </div>
             <p class="mb-2 z-40 absolute"></p>
             <p>Up to 100MiB allowed</p>
@@ -72,7 +90,7 @@ export const Upload = () => {
               JSON.parse((value as any)?.history)?.length > 0 &&
               'History'}
           </div>
-          <div class="grid grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] p-2 gap-3">
+          <div class="grid grid-cols-[repeat(auto-fill,minmax(16rem,1fr))] p-2 gap-3">
             <For each={processCard().reverse()}>
               {(data, i) => (
                 <UploadCard file={data} preData={null} isUploaded={false} />
