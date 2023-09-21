@@ -64,3 +64,11 @@ body {
   color: #19ff39;
   background-color: rgba(14, 40, 10, 0.8);
 }
+
+.aspect-video {
+  aspect-ratio: 16 / 6;
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(6px);
+}
