@@ -1,14 +1,22 @@
 import { createDropzone } from '@solid-primitives/upload';
-import { For, createSignal } from 'solid-js';
+import { For, createEffect, createSignal } from 'solid-js';
 import axios from 'axios';
 import { UploadCard, miraiHistory, miraiValue } from './uploadcard.component';
 import createLocalStore from '@solid-primitives/local-store';
 import Arrow from './Arrow';
+import { humanFileSize } from '../libs/utils';
+
+(window as unknown as {
+  uploadLimit: number;
+}).uploadLimit = 104857600
 
 export const Upload = () => {
   const [value, setValue] = createLocalStore('m1rai');
   const [isDraging, setIsDraging] = createSignal(false);
   const [processCard, setProcessCard] = createSignal([]);
+  const [displayUploadLimit, setDisplayUploadLimit] = createSignal(humanFileSize((window as unknown as {
+    uploadLimit: number;
+  }).uploadLimit))
   const [finishedCard, setFinishedCard] = createSignal(
     JSON.parse((value as any).history || '[]'),
   );
@@ -33,6 +41,14 @@ export const Upload = () => {
       setIsDraging(false);
     },
   });
+
+  createEffect(() => {
+    setDisplayUploadLimit(humanFileSize((window as unknown as {
+      uploadLimit: number;
+    }).uploadLimit))
+  }, [(window as unknown as {
+    uploadLimit: number;
+  }).uploadLimit])
 
   return (
     <>
