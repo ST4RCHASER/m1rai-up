@@ -170,6 +170,26 @@ export const UploadCard = ({
         })
         await Promise.all(uploadPromises)
         console.log('finished', uploadPromises)
+        //If all upload success
+        if (uploadPromises.every((p: any) => p.status === 'fulfilled')) {
+          setProgress(0);
+          setIsOK(true);
+          const res = {
+            name: file.name,
+            url: data.data.url,
+            size: file.size,
+            date: displayData().date,
+          };
+          setDisplayData(res);
+
+          // Add to history
+          const newArray = JSON.parse((value as any).history);
+          newArray.push(res);
+          setValue('history', JSON.stringify(newArray));
+
+          setShowCompleteText(true);
+          clearInterval(timer)
+        }
       }).catch((e) => {
         if (timer) {
           clearInterval(timer)
