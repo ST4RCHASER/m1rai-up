@@ -55,9 +55,8 @@ export const Upload = () => {
       <main>
         <div
           ref={dropzoneRef}
-          class={`${
-            isDraging() ? 'z-50 opacity-100' : 'z-30 opacity-0'
-          } duration-200 w-screen h-screen fixed flex items-center justify-center bg-black bg-opacity-80`}
+          class={`${isDraging() ? 'z-50 opacity-100' : 'z-30 opacity-0'
+            } duration-200 w-screen h-screen fixed flex items-center justify-center bg-black bg-opacity-80`}
         >
           <h1 class="text-3xl md:text-6xl text-white font-bold">
             Drag here to upload
@@ -100,6 +99,20 @@ export const Upload = () => {
             </div>
             <p class="mb-2 z-40 absolute"></p>
             <p>Up to 100MiB allowed</p>
+            <div class="hidden md:block mt-4">
+              <p>
+                Need temporary file url?
+                <br />
+                Check out s3kai for temporary file upload:{' '}
+                <a
+                  href="https://up.s3k.ai"
+                  target="_blank"
+                  class="underline absolute z-40 ml-2"
+                >
+                  Click here
+                </a>
+              </p>
+            </div>
           </div>
           <div class="px-4 py-2">
             {(value as miraiValue)?.history &&
