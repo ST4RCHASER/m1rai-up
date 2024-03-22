@@ -59,7 +59,7 @@ export const Upload = () => {
           <div className='p-4 text-lg'>
             <p>Welcome to m1rai up</p>
             <p className='mb-2'>
-              <span className='hidden md:inline'>Drag &aposand drop or click</span>
+              <span className='hidden md:inline'>Drag 'and drop or click</span>
               <span className='inline md:hidden'>Touch</span> anywhere to upload
             </p>
             <div className='hidden md:block'>
