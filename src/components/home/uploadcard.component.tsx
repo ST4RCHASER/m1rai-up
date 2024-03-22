@@ -142,7 +142,12 @@ export const UploadCard = ({
         className='absolute -z-10 h-full bg-opacity-30 transition-all duration-200'
       />
       {isOK && displayData.name.match(/\.(jpeg|jpg|gif|png|svg)$/i) && (
-        <img src={displayData.url} className='aspect-video object-cover' alt='Preview Image' />
+        <img
+          src={displayData.url}
+          loading='lazy'
+          className='aspect-video object-cover'
+          alt='Preview Image'
+        />
       )}
       <div
         className={`p-3 transition-all ${
