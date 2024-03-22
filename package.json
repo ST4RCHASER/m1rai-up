@@ -7,7 +7,6 @@
         "dev": "vite",
         "build": "tsc && vite build",
         "preview": "vite preview",
-        "preinstall": "pnpm dlx only-allow pnpm",
         "pre-commit": "sh .husky/pre-commit",
         "prepare": "husky || true",
         "update-deps": "npm-check-updates --configFileName .ncurc.json",
